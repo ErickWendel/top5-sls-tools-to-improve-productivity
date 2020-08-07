@@ -7,7 +7,9 @@
     "nodemon": "^2.0.4",
     "serverless-offline": "^6.5.0"
   },
-  "devDependencies": {},
+  "devDependencies": {
+    "serverless": "^1.78.1"
+  },
   "scripts": {
     "start": "npx nodemon --exec sls offline",
     "test": "echo \"Error: no test specified\" && exit 1"
