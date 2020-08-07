@@ -1,0 +1,23 @@
+
+service: serverless-offline
+
+
+provider:
+  name: aws
+  runtime: nodejs12.x
+
+package:
+  excludeDevDependencies: true
+  individually: true
+  
+plugins:
+  - serverless-offline
+
+functions:
+  hello:
+    handler: handler.hello
+    events:
+        - http:
+            path: /hi
+            method: any
+

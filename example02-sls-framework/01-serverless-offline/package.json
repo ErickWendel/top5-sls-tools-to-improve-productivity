@@ -1,0 +1,18 @@
+{
+  "name": "01-serverless-offline",
+  "version": "1.0.0",
+  "description": "",
+  "main": "handler.js",
+  "dependencies": {
+    "nodemon": "^2.0.4",
+    "serverless-offline": "^6.5.0"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "start": "npx nodemon --exec sls offline",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
+}

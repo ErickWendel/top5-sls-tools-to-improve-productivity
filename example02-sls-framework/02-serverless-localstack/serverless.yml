@@ -1,0 +1,38 @@
+
+service: serverless-localstack-example
+provider:
+  name: aws
+  runtime: nodejs12.x
+  region: us-east-1
+  stage: local
+plugins:
+  - serverless-localstack
+  
+custom:
+  localstack:
+    stages:
+      - local
+    autostart: false
+    debug: true
+    endpoints:
+      # This section is optional - can be used for customizing the target endpoints
+      S3: http://localhost:4566
+      CloudFormation: http://localhost:4566
+      Lambda: http://localhost:4566
+      IAM: http://localhost:4566
+      STS: http://localhost:4566
+      
+
+package:
+  individually: true 
+  excludeDevDependencies: true
+
+functions:
+  hello:
+    handler: handler.hello
+    events:
+      - s3:
+          bucket: reports
+          event: s3:ObjectCreated:*
+          rules:
+            - suffix: .csv
