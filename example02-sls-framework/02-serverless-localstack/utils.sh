@@ -14,7 +14,7 @@ awslocal s3 cp $FILE_PATH s3://$BUCKETNAME
 APP_NAME=serverless-localstack-example
 LOG_GROUP=$(awslocal logs describe-log-groups \
     | \
-    jq -r '.logGroups[0].logGroupName' \
+    jq -r '.logGroups[].logGroupName' \
     | grep $APP_NAME
 )
 
