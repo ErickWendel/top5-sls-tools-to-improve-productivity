@@ -1,0 +1,12 @@
+[
+    {
+        "id": "01",
+        "name": "Flash",
+        "power": "speed"
+    },
+    {
+        "id": "02",
+        "name": "Wonderwoman",
+        "power": "strength"
+    }
+]

@@ -1,0 +1,22 @@
+{
+  "name": "03-serverless-dynamodb",
+  "version": "1.0.0",
+  "description": "",
+  "main": "handler.js",
+  "dependencies": {},
+  "devDependencies": {
+    "serverless": "1.78.1",
+    "serverless-dynamodb-local": "0.2.39",
+    "serverless-offline": "6.5.0"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "seed": "npx sls dynamodb seed",
+    "start": "npm run migrate && npm run seed && npx sls offline",
+    "migrate": "npx sls dynamodb migrate",
+    "curl": "curl -i http://localhost:3000/local/hi"
+  },
+  "keywords": [],
+  "author": "erickwendel",
+  "license": "ISC"
+}
