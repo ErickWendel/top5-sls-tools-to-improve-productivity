@@ -5,6 +5,7 @@ services:
     image: localstack/localstack
     ports:
       - "4566:4566"
+      - "4567:4567"
     environment:
       - SERVICES=s3,lambda,cloudformation,cloudwatch,sts,iam,dynamodb
       - LAMBDA_EXECUTOR=docker
