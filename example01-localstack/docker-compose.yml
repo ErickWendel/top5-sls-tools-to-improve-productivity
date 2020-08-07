@@ -1,0 +1,12 @@
+version: '2.1'
+services:
+
+  localstack:
+    image: localstack/localstack
+    ports:
+      - "4566:4566"
+      - "8080:8080"
+    environment:
+      - SERVICES=s3,dynamodb
+      - LAMBDA_EXECUTOR=local
+      - DOCKER_HOST=unix:///var/run/docker.sock

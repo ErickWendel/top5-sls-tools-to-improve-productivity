@@ -1,0 +1,19 @@
+{
+  "name": "example01-localstack",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "start": "node --harmony-top-level-await index.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "aws-sdk": "^2.728.0"
+  },
+  "engines": {
+    "node": "10"
+  }
+}
