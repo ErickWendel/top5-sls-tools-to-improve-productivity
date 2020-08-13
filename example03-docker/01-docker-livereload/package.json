@@ -1,0 +1,24 @@
+{
+  "name": "tooling-s3-sqs",
+  "version": "1.0.0",
+  "description": "",
+  "main": "handler.js",
+  "scripts": {
+    "test": "npx sls invoke test --path test",
+    "start": "npx nodemon --exec npm run offline",
+    "offline": "npx sls offline start --host 0.0.0.0"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "nodemon": "^2.0.2",
+    "serverless": "^1.67.0",
+    "serverless-localstack": "^0.4.24",
+    "serverless-mocha-plugin": "^1.12.0",
+    "serverless-offline": "^6.1.4"
+  },
+  "dependencies": {
+    "aws-sdk": "^2.653.0"
+  }
+}

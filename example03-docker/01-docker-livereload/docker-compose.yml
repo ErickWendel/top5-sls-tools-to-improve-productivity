@@ -1,0 +1,34 @@
+version: '2.1'
+services:
+
+  localstack:
+    image: localstack/localstack
+    ports:
+      - "4572:4572"
+      - "8080:8080"
+    environment:
+      - SERVICES=s3
+      - LAMBDA_EXECUTOR=local
+      - DOCKER_HOST=unix:///var/run/docker.sock
+    volumes:
+      - /var/run/docker.sock:/var/run/docker.sock
+
+  app:
+    build: .
+    volumes:
+        - .:/src
+        - nodemodules:/src/node_modules
+    restart: on-failure
+    # command: npm test
+    ports:
+        - 3000:3000
+    links:
+        - localstack
+    depends_on: 
+        - localstack
+    environment: 
+        LOCALSTACK_HOST: localstack
+        S3_PORT: 4572
+
+volumes:
+    nodemodules: {}

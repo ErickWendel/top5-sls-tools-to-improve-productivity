@@ -1,0 +1,26 @@
+
+service: tooling-s3-sqs
+
+
+provider:
+  name: aws
+  runtime: nodejs12.x
+  
+plugins:
+  - serverless-localstack
+  - serverless-mocha-plugin
+  - serverless-offline
+
+custom:
+  serverless-offline:
+    useChildProcesses: true
+
+functions:
+  hello:
+    handler: handler.hello
+    events:
+      - http:
+          method: get
+          path: hello
+
+
