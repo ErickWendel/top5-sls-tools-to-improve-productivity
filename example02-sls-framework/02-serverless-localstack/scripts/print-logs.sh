@@ -1,3 +1,5 @@
+# sh print-logs.sh
+
 # Global
 alias awslocal="aws --endpoint-url=http://localhost:4566"
 
