@@ -15,7 +15,6 @@
     "nodemon": "^2.0.2",
     "serverless": "^1.67.0",
     "serverless-localstack": "^0.4.24",
-    "serverless-mocha-plugin": "^1.12.0",
     "serverless-offline": "^6.1.4"
   },
   "dependencies": {
