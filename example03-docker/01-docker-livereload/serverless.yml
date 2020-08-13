@@ -8,7 +8,6 @@ provider:
   
 plugins:
   - serverless-localstack
-  - serverless-mocha-plugin
   - serverless-offline
 
 custom:
